@@ -4,11 +4,8 @@ import java.util.List;
 
 @Stateless
 public class PersonServiceImpl implements PersonInterface {
-    private List<String> person;
 
-    public PersonServiceImpl() {
-        this.person = new ArrayList<>();
-    }
+    private List<String> person = new ArrayList<>();
 
     @Override
     public String sayHello() {
@@ -17,6 +14,7 @@ public class PersonServiceImpl implements PersonInterface {
 
     @Override
     public void addName(String newName) {
+
         person.add(newName);
     }
 
@@ -33,5 +31,10 @@ public class PersonServiceImpl implements PersonInterface {
     @Override
     public String getName(int i) {
         return person.get(i);
+    }
+
+    @Override
+    public List<String> getAll() {
+        return person;
     }
 }

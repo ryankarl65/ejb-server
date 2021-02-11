@@ -1,15 +1,18 @@
 import javax.ejb.Remote;
+import java.util.List;
 
 @Remote
 public interface PersonInterface {
 
-     String sayHello();
+    String sayHello();
 
-     void addName(String newName);
+    void addName(String newName);
 
-     void removeNameFromIndex(int i);
+    void removeNameFromIndex(int i);
 
-     void removeAll();
+    void removeAll();
 
-     String getName(int i);
+    String getName(int i);
+
+    List<String> getAll();
 }
